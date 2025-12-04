@@ -1,0 +1,20 @@
+body{
+    background-color:#8FBC8F
+}
+
+h1{
+   font-family: Georgia, serif;
+   color:#FFF8DC; 
+   text-align:center;
+}
+
+.container{
+    text-align:center;
+}
+
+p{
+  font-style: italic;
+  font-size:30px;
+  color:brown;
+}
+
