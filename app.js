@@ -8,6 +8,7 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }));
+
 app.use('/public', express.static('public'));
 
 app.use(express.json());
@@ -16,6 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/', function (req, res) {
     res.render("home");
 });
+
 app.get('/login', function(req,res){
     res.render('login.ejs');
 });
@@ -50,9 +52,11 @@ app.get('/uploadrecipe', function (req, res, next)  {
         res.send('Please login to view this page!');
     }
 });
+
 app.get('/register', function(req,res){
     res.render('register.ejs');
 });
+
 app.post('/register', function(req, res, next) {
     var username= req.body.username;
     var email= req.body.email;
@@ -64,5 +68,6 @@ app.post('/register', function(req, res, next) {
         res.render('login');
     });
 });
+
 app.listen(3000);
 console.log('Node app is running on port 3000');
