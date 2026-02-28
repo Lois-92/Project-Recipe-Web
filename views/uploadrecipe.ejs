@@ -1,53 +1,74 @@
 <html>
     <head>
         <%- include('partials/header1.ejs') %>
+
         <title>Upload Your Recipe</title>
     </head>
+   
+   
     <body>
         <%- include('partials/navbar2.ejs') %>
+        
+        
         <div class="container">
+           
             <h1>Share Your Recipe</h1>
+            
             <p>Use the form below to upload your favorite dish!</p>
             
-            <form action="/submit-recipe" method="POST" enctype="multipart/form-data">
-                
+          <form action="/uploadrecipe" method="POST" enctype="multipart/form-data">
 
-            <!-- Recipe Title -->
-            <label for="recipe-title">Recipe Title:</label><br>
-            <input type="text" id="recipe-title" placeholder="Enter Recipe Title" name="recipe-title" required><br><br>
+           <div class="signup template d-flex  flex-grow-1 flex-column align-items-center  min-vh-100  p-3  p-md-5">
+           
 
-            <!-- Short Description -->
-            <label for="description">Description:</label><br>
-            <textarea id="description" name="description" placeholder="Enter Description" rows="4" cols="50"></textarea><br><br>
 
-            <!-- Image Upload -->
-            <label for="recipe-image">Upload Image:</label><br>
-            <input type="file" id="recipe-image" name="recipe-image" accept="image/png, image/jpeg"><br><br>
+            <div class="form_container p-5 rounded bg-white shadow-sm " style="width: 100%;  max-width:650px;">
+            
 
-            <!-- Ingredients List (Use a textarea for easy input of multiple items) -->
-            <label for="ingredients">Ingredients (one per line):</label><br>
-            <textarea id="ingredients" name="ingredients" placeholder="Enter Ingredients" rows="10" cols="50"></textarea><br><br>
+            
+            <div class="mb-2">  <!-- margin-bottom spacing-->
+              <label for="recipetitle" style="font-size: xx-large;">Recipe Title:</label><br>
+              <input type="text" id="recipetitle" class="form-control-sm" placeholder="Enter Recipe title" name="recipetitle" required><br><br>
+            </div>
+            
 
-            <!-- Instructions (Use a textarea for easy input of steps) -->
-            <label for="instructions">Instructions (step-by-step):</label><br>
-            <textarea id="instructions" name="instructions" placeholder="Enter Method" rows="15" cols="50"></textarea><br><br>
+            
+            <label for="recipeImage" style="font-size: xx-large;" >Upload Image:</label><br>
+            <input type="file"  id="recipeImage" name="recipeImage" accept="image/png, image/jpeg"  ><br><br>
+                                                <!-- Backend receives it as req.file-->
+            
+            
 
-            <!-- Categories/Tags (using a select dropdown) -->
-            <label for="category">Category:</label>
+            <div class="mb-2">
+              <label for="ingredients"  style="font-size: xx-large;" >Ingredients (one per line):</label><br>
+              <textarea id="ingredients"  class="form-control-lg"  name="ingredients" placeholder="Enter Ingredients" rows="10" cols="50"></textarea><br><br>
+            </div>                                                                                                     <!--rows - height ,  cols-width-->
+
+
+            <div class="mb-2">
+             <label for="instructions"  style="font-size: xx-large;"  >Instructions (step-by-step):</label><br>
+             <textarea id="instructions" class="form-control-lg"  name="instructions" placeholder="Enter Method" rows="12" cols="50"></textarea><br><br>
+            </div>
+            
+
+
+            <label for="category"  style="font-size: xx-large;" >Category:</label> 
+            
             <select id="category" name="category">
-            <option value="breakfast">Breakfast</option>
-            <option value="lunch">Lunch</option>
-            <option value="dinner">Dinner</option>
-            <option value="dessert">Dessert</option>
-        </select><br><br>
+              <option value="Veggie">Veggie</option>
+              <option value="Meatdish">Meatdish</option>
+              <option value="Sweets">Sweets</option>
+            </select><br><br>
 
-            <!-- Submission Button -->
-        <button type="submit">Submit Recipe</button>
-
+            
+            <button type="submit"  class="btn btn-primary" >Submit Recipe</button>
 
 
+        </div>
 
-        </form>
+        </div>
+          
+          </form>
         </div>
     </body>
 </html>

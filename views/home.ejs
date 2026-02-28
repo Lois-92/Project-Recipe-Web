@@ -1,34 +1,36 @@
 <html>
     <head>
           <%- include('partials/header1.ejs')%>
-        <link rel="stylesheet" href="public/css/styles.css">
+        <link rel="stylesheet" href="/public/css/styles.css">
     </head>
+   
+   
     <body>
         <%- include('partials/navbar1.ejs')%>
-        <div class="container mt-5">
+        
+        
+
+        <div class="container mt-5">  <!--margin-top spacing -->
 
         <h1 style="font-size:60px;"> This is My Recipe</h1>
 
-        <style>
-                .img2{
-
-                    width: 820px;
-                    height:auto;
-                    display:block;
-                    margin-left:auto;
-                    margin-right:auto;
-                    margin-top: 30px;
-                }
-        </style>
         
-        <form>
-            <input type="text" id="seatch-input" placeholder="Search by name " required
-            />
+               
+        <form action="/recipes/search"  method="GET" class="search-form">
+           <!--create a form and send data to /recipes/search , route using GET method-->
 
-            <button type="submit" id="Search-button">Search</button>
-            <br>
+            
+            <!--Express cannot read id, it only reads form values using name--> <!-- this is what Express reads, becomes req.query.q in aap.js-->
+            <input type="text" id="search-input" class="form-control" name="q" placeholder="Search by name " required >
+                                                                     
 
-            <img class="img2" src="/public/images/Home.jpg" alt="food">
+            <div class="mt-3">
+             <button type="submit" id="Search-button" class="btn btn-light" >Search</button>
+             <br>
+            </div>
+
+
+            <img class="img1" src="/public/images/Home.jpg" alt="food">
 
             
 
@@ -37,6 +39,7 @@
         <p>
             Reflecting on the profound connection between food and memories
         </p>
-        <h4><strong> <a href="Recipes">Recipes</a> </strong></h4>
+        
+        <h4><strong> <a href="Recipes">Check Out Our Recipes</a> </strong></h4>
     </body>
 </html>
