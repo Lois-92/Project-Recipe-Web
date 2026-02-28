@@ -2,46 +2,37 @@
     <head>
     <%- include('partials/header1.ejs') %> 
     
+
     </head>
+    
     <body>
          <%- include('partials/navbar1.ejs') %>
-         <div>
+         
+        <div>
             <h1>Login</h1>
             <br>
             <img class="img2" src="/public/images/login.avif" alt="Login">
            
-           <style>
-                .img2{
-                    width: 650px;
-                    height:auto;
-                    display:block;
-                    margin-left:auto;
-                    margin-right:auto;
-                }
-                
-                .login-form{
-                      max-width: 200px;
-                      margin: auto;
-                      
-                }
-                </style>
-            
-            <div class="login-container text-center mt-5">
+         
+             <div class="container text-center mt-5 ">
 
-            <form action="/auth" method="post">
+            <form action="/auth" method="post" class="login-form">
+
                 
-                <input type="text" name="username" placeholder="User Name" id="username" required>
-                <label for="password">
-                </label>
+                 <input type="text" name="username" class="form-control" placeholder="User Name" id="username" required>
+               
                 
-                <input type="password" name="password" placeholder="Password" id="password" required>
+
+                <div class="mt-2">
+                  <input type="password" name="password"  class="form-control" placeholder="Password" id="password" required>
+                </div>
 
                 <br><br>
                 
-                <button type="submit" style="display:block; margin:0 auto; width:100px;">Login</button>
+                <button type="submit" class="btn btn-light">Login</button>
             </form>         
             <br>
-            <h4> <a href="register">Register</a></h4>
+            <h4> <a href="register">No Account ? Register</a></h4>
         </div>
     </body>
 </html> 

@@ -1,25 +1,70 @@
 <html>
     <head>
     <%- include('partials/header1.ejs') %>
+
+     
     </head>
+    
     <body>
          <%- include('partials/navbar1.ejs') %>
-         <div class="container">
-            <form action="/register" method="POST">
-                <h1> Register</h1>
+
+         <div class="signup-container">
+
+          <div class="image-section">
+          
+            <img class="img3" src="/public/images/signup2.jpg" alt="breakkyfood">
+            <img class="img4" src="/public/images/imag4.avif" alt="caulisalad">
+
+          </div>
+         
+            
+            <form action="/register" method="POST" class="row g-3" >
+
+                <div class="signup template d-flex  flex-grow-1 flex-column align-item-center  min-vh-100  p-3  p-md-5">
                 
 
-                <label for="username"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="username" id="username" required>
                 
-                <label for="email"><b>Email</b></label>
-                <input type="email" placeholder="Enter Email" name="email" id="email" required>
+                <div class="form_container p-5 rounded bg-white shadow-sm">
+                
+                
+                <h1 class="text-center mb-3  display-6" style= "color:#ff6347"> Register</h1>
+                
 
-                <label for="password"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="password" id="password" required>
+                <div class="mb-4">
+                  <label for="username" ><b>Username</b></label>
+                  <input type="text" class="form-control" placeholder="Enter Username" name="username" id="username" required>
+                </div>
+                
 
-                <button type="submit">Register</button>
-        </form>
-    </div>
+
+               
+                <div class="mb-4">
+                  <label for="email"><b>Email</b></label>
+                  <input type="email" class="form-control" placeholder="Enter Email" name="email" id="email" required>
+                </div>
+                
+
+               
+                <div class="mb-4"> 
+                  <label for="password"><b>Password</b></label>
+                  <input type="password" class="form-control"  placeholder="Enter Password" name="password" id="password" required>
+                </div>
+               
+                
+                <div class="d-grid mt-4"> 
+                  <button type="submit"  class="btn btn-light" >Register</button>
+                </div>
+
+                <p class="text-center mt-3 mb-0 small ">
+                    Already Registered  <a href="login"> Login</a>
+                </p>
+
+                
+
+                
+                
+              </form>
+                </div>
+              </div>
 </body>
 </html>

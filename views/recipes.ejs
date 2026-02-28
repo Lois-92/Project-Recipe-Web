@@ -1,0 +1,40 @@
+<html>
+    <head>
+         <%- include('partials/header1.ejs')%>
+       
+    </head>
+    <body> 
+         <%- include('partials/navbar1.ejs')%>
+
+         
+         
+         <div class="container"  style="font-size: x-large;">
+            
+            <h1>Recipes</h1>
+            
+         <ul>
+            <% if (recipes.length > 0) { %>     <!-- checks if the recipes array has any items-->
+
+               <% recipes.forEach(recipe => { %>   <!-- Foreach loop,  it through every recipe in the array-->
+            <li>
+                
+                
+                <a href="/recipes/<%= recipe.id %>">    <!-- create a link to a specific recipe page -->
+
+                    <%= recipe.recipetitle %>
+                </a>
+            </li>
+        <% }) %>
+    <% } else { %>
+                
+
+         <li>No recipes available</li>
+         <% } %>
+         
+         </ul>
+
+         <a href="/uploadrecipe">Add Recipe</a>
+         </div>
+      
+    </body>
+</html>    

@@ -1,18 +1,37 @@
-<nav class="navbar navbar-expand-sm bg-light">
-    <div class="container-fluid">
-        <ul class="navbar-nav">
+<nav class="navbar navbar-expand-sm bg-light justify-content-center ">
+    
+    <div class="container-fluid ">
+        
+        <ul class="navbar-nav mx-auto ">
+            
             <li class="nav-item">
                 <a class="nav-link" href="/">Home</a>
             </li>
+           
             <li class="nav-item">
                 <a class="nav-link" href="/Recipes">Recipes</a>
+            </li>
+        </ul>
+
+
+        <ul class="navbar-nav ms-auto">
+            
+            <%if (user){  %>
+            <li class="nav-item">
+               <span class="nav-link text-primary">Welcome, <%= user.username %>!</span>
+            </li>
+         <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+         <% } else { %>
+            
+
             <li class="nav-item">
                 <a class="nav-link" href="/Register">Register</a>
             </li>
-            </li>
+            
             <li class="nav-item">
                 <a class="nav-link" href="/login">Login</a>
             </li>
+            <% } %>
         </ul>
     </div>
 </nav>
