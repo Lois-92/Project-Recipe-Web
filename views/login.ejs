@@ -1,6 +1,7 @@
 <html>
     <head>
-    <%- include('partials/header1.ejs') %>
+    <%- include('partials/header1.ejs') %> 
+    
     </head>
     <body>
          <%- include('partials/navbar1.ejs') %>
@@ -8,30 +9,39 @@
             <h1>Login</h1>
             <br>
             <img class="img2" src="/public/images/login.avif" alt="Login">
-            <style>
+           
+           <style>
                 .img2{
+                    width: 650px;
+                    height:auto;
                     display:block;
                     margin-left:auto;
                     margin-right:auto;
-                    width:auto;
-                    height:auto;
                 }
-                form{
-                   width:24%;
-                   margin: atuo;
-                   padding: 150px;
-                   
+                
+                .login-form{
+                      max-width: 200px;
+                      margin: auto;
+                      
                 }
-            </style>
+                </style>
+            
+            <div class="login-container text-center mt-5">
+
             <form action="/auth" method="post">
+                
                 <input type="text" name="username" placeholder="User Name" id="username" required>
                 <label for="password">
                 </label>
-                <input type="passwor" name="password" placeholder="Password" id="password" required>
-                <input type="submit" value="Login">
+                
+                <input type="password" name="password" placeholder="Password" id="password" required>
+
+                <br><br>
+                
+                <button type="submit" style="display:block; margin:0 auto; width:100px;">Login</button>
             </form>         
             <br>
             <h4> <a href="register">Register</a></h4>
         </div>
     </body>
-</html>
+</html> 

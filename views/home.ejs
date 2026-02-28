@@ -5,17 +5,38 @@
     </head>
     <body>
         <%- include('partials/navbar1.ejs')%>
-        <div class="container">
+        <div class="container mt-5">
+
         <h1 style="font-size:60px;"> This is My Recipe</h1>
+
+        <style>
+                .img2{
+
+                    width: 820px;
+                    height:auto;
+                    display:block;
+                    margin-left:auto;
+                    margin-right:auto;
+                    margin-top: 30px;
+                }
+        </style>
+        
         <form>
             <input type="text" id="seatch-input" placeholder="Search by name " required
             />
 
             <button type="submit" id="Search-button">Search</button>
+            <br>
+
+            <img class="img2" src="/public/images/Home.jpg" alt="food">
+
+            
+
         </form>
+       
         <p>
             Reflecting on the profound connection between food and memories
         </p>
-        <h4> <a href="Recipe">Recipe</a></h4>
+        <h4><strong> <a href="Recipes">Recipes</a> </strong></h4>
     </body>
 </html>

@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <%- include('partials/header1.ejs') %>
+        <title>Upload Your Recipe</title>
+    </head>
+    <body>
+        <%- include('partials/navbar2.ejs') %>
+        <div class="container">
+            <h1>Share Your Recipe</h1>
+            <p>Use the form below to upload your favorite dish!</p>
+            
+            <form action="/submit-recipe" method="POST" enctype="multipart/form-data">
+                
+
+            <!-- Recipe Title -->
+            <label for="recipe-title">Recipe Title:</label><br>
+            <input type="text" id="recipe-title" placeholder="Enter Recipe Title" name="recipe-title" required><br><br>
+
+            <!-- Short Description -->
+            <label for="description">Description:</label><br>
+            <textarea id="description" name="description" placeholder="Enter Description" rows="4" cols="50"></textarea><br><br>
+
+            <!-- Image Upload -->
+            <label for="recipe-image">Upload Image:</label><br>
+            <input type="file" id="recipe-image" name="recipe-image" accept="image/png, image/jpeg"><br><br>
+
+            <!-- Ingredients List (Use a textarea for easy input of multiple items) -->
+            <label for="ingredients">Ingredients (one per line):</label><br>
+            <textarea id="ingredients" name="ingredients" placeholder="Enter Ingredients" rows="10" cols="50"></textarea><br><br>
+
+            <!-- Instructions (Use a textarea for easy input of steps) -->
+            <label for="instructions">Instructions (step-by-step):</label><br>
+            <textarea id="instructions" name="instructions" placeholder="Enter Method" rows="15" cols="50"></textarea><br><br>
+
+            <!-- Categories/Tags (using a select dropdown) -->
+            <label for="category">Category:</label>
+            <select id="category" name="category">
+            <option value="breakfast">Breakfast</option>
+            <option value="lunch">Lunch</option>
+            <option value="dinner">Dinner</option>
+            <option value="dessert">Dessert</option>
+        </select><br><br>
+
+            <!-- Submission Button -->
+        <button type="submit">Submit Recipe</button>
+
+
+
+
+        </form>
+        </div>
+    </body>
+</html>
